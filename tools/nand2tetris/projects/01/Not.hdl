@@ -8,10 +8,17 @@
  * out = not in
  */
 
+/*
+  IN | NAND | NOT
+  0  |  1   |  1
+  1  |  0   |  0
+
+  So Nand and NOT returns same values for the same input, the only difference is that NAND takes two bits and NOT takes a single bit.
+*/
 CHIP Not {
     IN in;
     OUT out;
 
     PARTS:
-    // Put your code here:
+        Nand(a=in,b=in,out=out);
 }

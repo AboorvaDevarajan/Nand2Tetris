@@ -9,10 +9,26 @@
  *       0 otherwise
  */
 
+
+/*
+  A  | B  |  OR | NOT(A) | NOT(B) | NAND
+  0  | 0  |   0 |   1    |  1     |  0
+  0  | 1  |   1 |   1    |  0     |  1
+  1  | 0  |   1 |   0    |  1     |  1
+  1  | 1  |   1 |   0    |  0     |  1
+
+*/
+
+/*
+
+*/
+
 CHIP Or {
     IN a, b;
     OUT out;
 
     PARTS:
-    // Put your code here:
+        Not(in=a,out=Nota);
+        Not(in=b,out=Notb);
+        Nand(a=Nota,b=Notb,out=out);
 }
